@@ -8,11 +8,24 @@
     <div class="seller-prod">
       <%= link_to "New Product", new_product_path %>
       <% if @user.products.any? %>
-        <ul>
+
           <% @user.products.each do |prod| %>
-          <li><%= link_to prod.name %></li>
+          <div class="mini-prod panel">
+            <div class="panel-heading">
+              <h4><%= link_to prod.name %></h4>
+            </div>
+            <div class="panel-body">
+              <%= image_tag(prod.image(:medium)) %>
+            </div>
+            <div class="panel-footer">
+              <%= link_to 'Edit', edit_product_path(prod)%>
+              <%= link_to 'Delete', product_path(prod),
+                                :data => {:confirm => "Are you sure? This will permanently remove this item!",
+                                  :method => "delete"}%>
+            </div>
+          </div>
           <% end %>
-        </ul>
+
       <% else %>
         <h4>You don't have any products listed yet.</h4>
       <% end %>
