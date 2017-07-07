@@ -25,6 +25,7 @@
 }
 
 .page-box {
+  opacity: .93;
   min-height: 800px;
   margin: 5%;
   padding: 3%;
@@ -32,6 +33,7 @@
   background-color: #efedea;
 }
 .page-box2 {
+  opacity: .8;
   min-height: 800px;
   margin: 8%;
   padding: 4%;
@@ -46,4 +48,28 @@
 }
 .nav {
   margin-right: 5px;
+}
+
+.user-box {
+  text-align: center;
+  border: 2px solid white;
+  padding: 2%;
+  width: 50%;
+  img {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    border: 1px solid white;
+  }
+}
+.admins {
+  padding-top: 4%;
+  text-align: center;
+  .user-box{
+    padding: 2%;
+    float: left;
+    width: 30%;
+    border: 1px solid lightgray;
+  }
+
 }

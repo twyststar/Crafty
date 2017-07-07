@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   has_many :products
 
+  scope :seller, -> { where(:seller_role => true)}
+  scope :admin, -> { where(:admin_role => true)}
+  scope :member, -> { where(:user_role => true)}
+
   def status
     if self.admin_role
       "Admin"
