@@ -1,0 +1,8 @@
+<h1>Welcome to Crafty Splashy Page</h1>
+<div class="sign-box">
+  <% if !current_user %>
+    <h3><%= link_to "Sign In" %></h3>
+    <h5>Or</h5>
+    <h3><%= link_to "Browse as a Guest", home_index_path %></h3>
+  <% end %>
+</div>
