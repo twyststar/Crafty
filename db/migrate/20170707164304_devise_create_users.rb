@@ -42,6 +42,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
     User.create! do |u|
         u.email     = 'test@test.com'
         u.password    = 'password'
+        u.admin_role = true 
     end
   end
 end
