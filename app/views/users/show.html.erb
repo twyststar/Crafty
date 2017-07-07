@@ -1,0 +1,6 @@
+<% if @user == current_user %>
+<h2>Welcome, <%= @user.username %>,  <%= @user.status %></h2>
+<%= link_to "Edit your profile", edit_user_registration_path(@user) %>
+<% else %>
+<h2><%= @user.username %>, <%= @user.status %></h2>
+<% end %>
