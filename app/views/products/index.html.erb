@@ -1,5 +1,31 @@
-<h2>Here are all of our products</h2>
-<p>link to each product</p>
-<p>link to products by scope??</p>
-<br>
-<p>Want to sell a product? Sign in/up as a seller -- link to sign-up/sign-in</p>
+<div class="page-box row">
+  <h2>All Products:</h2>
+  <br>
+  <div class="main-display col-xs-8">
+    <% if @products.any? %>
+    <% @products.each do |prod| %>
+    <div class="main-prod panel">
+      <div class="panel-heading">
+        <h4><%= link_to prod.name, product_path(prod) %></h4>
+      </div>
+      <div class="panel-body">
+        <%= image_tag(prod.image(:medium)) %>
+        <hr>
+        <p><%= prod.description %></p>
+      </div>
+      <div class="panel-footer">
+        <h5>Crafted by: <%= link_to prod.user.username, user_path(prod.user) %></h5>
+      </div>
+    </div>
+    <% end %>
+    <% else %>
+    <h3>There are no products currently listed!</h3>
+    <% end %>
+  </div>
+  <div class="col-xs-4 well">
+    <h3>Want to list a product?</h3>
+    <p><em><%= link_to "Sign Up as a Seller" %></em>, make sure your select 'Seller' as your role.</p>
+    <h4>Already a member, but want to make something?</h4>
+    <p><em><%= link_to "Edit Your Profile", edit_user_registration_path(current_user) %></em>, select 'Seller' as your role.</p>
+  </div>
+</div>

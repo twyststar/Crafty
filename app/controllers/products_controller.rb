@@ -8,7 +8,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @user = User.find(params[:user_id])
   end
 
   def new
@@ -39,7 +38,7 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy

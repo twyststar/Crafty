@@ -12,6 +12,7 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", home_index_path %></li>
+          <li><%= link_to "Crafty People", users_path %></li>
           <li><%= link_to 'Products', products_path %></li>
           <% if current_user %>
           <li><%= link_to 'You', user_path(current_user.id) %></li>
@@ -21,7 +22,7 @@
           <% end %>
       </ul>
     </div>
-    <div class="container">
+    <div class="container layout">
 
       <%= flash[:alert] %>
       <%= flash[:notice] %>

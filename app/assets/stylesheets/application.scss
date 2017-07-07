@@ -1,2 +1,49 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.layout {
+  min-height: 1000px;
+  width: 1200px;
+  background-image: url(back2.jpg);
+}
+
+#splash {
+  margin-left: -20px;
+  min-height: 1000px;
+  width: 1200px;
+  background-image: url(back.jpg);
+
+}
+.sign-box {
+  text-align: center;
+  margin-left: 35%;
+  margin-top: 5%;
+  padding: 2%;
+  border: 4px solid white;
+  background-color: #efedea;
+  width: 30%;
+}
+
+.page-box {
+  min-height: 800px;
+  margin: 5%;
+  padding: 3%;
+  border: 4px solid white;
+  background-color: #efedea;
+}
+.page-box2 {
+  min-height: 800px;
+  margin: 8%;
+  padding: 4%;
+  border: 4px solid white;
+  background-color: #efedea;
+}
+.main-prod {
+  width: 80%;
+}
+.mini-prod {
+  width: 50%;
+}
+.nav {
+  margin-right: 5px;
+}

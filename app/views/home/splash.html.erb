@@ -1,10 +1,14 @@
-<h1>Welcome to Crafty Splashy Page</h1>
-<div class="sign-box">
-  <% if !current_user %>
-    <h3><%= link_to "Sign In", new_user_session_path %></h3>
-    <br>
-    <h3><%= link_to "Sign Up", new_user_registration_path %></h3>
-    <br>
-    <h3><%= link_to "Browse as a Guest", home_index_path %></h3>
-  <% end %>
+<div id="splash">
+
+  <div class="sign-box">
+    <% if !current_user %>
+    <h1>Welcome to Crafty!</h1>
+    <h3>Your Home for Home-Made</h3>
+      <h3><%= link_to "Sign In", new_user_session_path %></h3>
+      <br>
+      <h3><%= link_to "Sign Up", new_user_registration_path %></h3>
+      <br>
+      <h3><%= link_to "Browse as a Guest", home_index_path %></h3>
+    <% end %>
+  </div>
 </div>

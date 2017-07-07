@@ -1,0 +1,19 @@
+<div class="page-box">
+  <div class="sellers">
+    <h2>Our Crafters</h2>
+    <% if @users.any? %>
+      <% @users.each do |user| %>
+      <div class="user-box">
+        <h3><%= link_to user.username, user_path(user) %></h3>
+        <h4><%= user.status %></h4>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="members">
+    <h2>Our Community</h2>
+  </div>
+  <div class="admins">
+    <h2>Our Administrators</h2>
+  </div>
+</div>

@@ -1,49 +1,60 @@
-<% if @user == current_user %>
-<h2>Welcome, <%= @user.username %>,  <%= @user.status %></h2>
-<%= link_to "Edit your profile", edit_user_registration_path(@user) %>
-  <% if current_user.admin_role %>
-    <%= link_to "Admin Dashboard", '/admin' %>
-  <% end %>
-  <% if current_user.seller_role %>
-    <div class="seller-prod">
-      <%= link_to "New Product", new_product_path %>
-      <% if @user.products.any? %>
+<div class="page-box">
+  <% if @user == current_user %>
+  <h2>Welcome, <%= @user.username %>,  <%= @user.status %></h2>
+  <%= link_to "Edit your profile", edit_user_registration_path(@user) %>
+    <% if current_user.admin_role %>
+      <%= link_to "Admin Dashboard", '/admin' %>
+    <% end %>
+    <% if current_user.seller_role || current_user.admin_role%>
+      <div class="seller-prod">
+        <%= link_to "New Product", new_product_path %>
+        <% if @user.products.any? %>
 
-          <% @user.products.each do |prod| %>
-          <div class="mini-prod panel">
-            <div class="panel-heading">
-              <h4><%= link_to prod.name %></h4>
+            <% @user.products.each do |prod| %>
+            <div class="mini-prod panel">
+              <div class="panel-heading">
+                <h4><%= link_to prod.name %></h4>
+              </div>
+              <div class="panel-body">
+                <%= image_tag(prod.image(:medium)) %>
+              </div>
+              <div class="panel-footer">
+                <%= link_to 'Edit', edit_product_path(prod)%>
+                <%= link_to 'Delete', product_path(prod),
+                                  :data => {:confirm => "Are you sure? This will permanently remove this item!",
+                                    :method => "delete"}%>
+              </div>
             </div>
-            <div class="panel-body">
-              <%= image_tag(prod.image(:medium)) %>
-            </div>
-            <div class="panel-footer">
-              <%= link_to 'Edit', edit_product_path(prod)%>
-              <%= link_to 'Delete', product_path(prod),
-                                :data => {:confirm => "Are you sure? This will permanently remove this item!",
-                                  :method => "delete"}%>
-            </div>
-          </div>
-          <% end %>
+            <% end %>
 
-      <% else %>
-        <h4>You don't have any products listed yet.</h4>
+        <% else %>
+          <h4>You don't have any products listed yet.</h4>
+        <% end %>
+      </div>
+    <% end %>
+
+
+
+  <% else %>
+  <h2><%= @user.username %>, <%= @user.status %></h2>
+  <% if @user.products.any? %>
+      <% @user.products.each do |prod| %>
+      <div class="mini-prod panel">
+        <div class="panel-heading">
+          <h4><%= link_to prod.name, product_path(prod) %></h4>
+        </div>
+        <div class="panel-body">
+          <%= image_tag(prod.image(:medium)) %>
+        </div>
+        <div class="panel-footer">
+        </div>
+      </div>
       <% end %>
-    </div>
+
+  <% else %>
+    <h4>This user doesn't have any products listed yet.</h4>
   <% end %>
 
+  <% end %>
 
-
-
-
-
-
-
-
-
-
-<% else %>
-<h2><%= @user.username %>, <%= @user.status %></h2>
-
-
-<% end %>
+</div>

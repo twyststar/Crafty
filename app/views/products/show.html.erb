@@ -1,1 +1,13 @@
-<h1>Here is a single product's details</h1>
+<div class="page-box">
+  <h1><%= @product.name %></h1>
+  <br>
+  <h4>Crafted by: <%= link_to @product.user.username, user_path(@product.user) %></h4>
+  <br>
+  <div class="product-card">
+    <%= image_tag(@product.image(:large)) %>
+    <hr>
+    <h4>Description:</h4>
+    <p><%= @product.description %></p>
+    <h6><%= @product.price %></h6>
+  </div>
+</div>
