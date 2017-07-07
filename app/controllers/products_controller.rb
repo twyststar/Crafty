@@ -15,6 +15,24 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def create 
+  def create
+    @user = current_user
+    @product = Product.new(product_params)
+    if @product.save
+      flash[:notice] = "Product successfully added!"
+      redirect_to user_path(current_user)
+    else
+      render new
+    end
   end
+
+
+
+
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :description, :user_id, :price, :image)
+  end
+
 end

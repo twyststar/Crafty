@@ -1,6 +1,31 @@
 <% if @user == current_user %>
 <h2>Welcome, <%= @user.username %>,  <%= @user.status %></h2>
 <%= link_to "Edit your profile", edit_user_registration_path(@user) %>
+  <% if current_user.admin_role %>
+    <%= link_to "Admin Dashboard", '/admin' %>
+  <% end %>
+  <% if current_user.seller_role %>
+    <div class="seller-prod">
+      <%= link_to "New Product", new_product_path %>
+      <% if @user.products.any? %>
+        <ul>
+          <% @user.products.each do |prod| %>
+          <li><%= link_to prod.name %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h4>You don't have any products listed yet.</h4>
+      <% end %>
+    </div>
+  <% end %>
+
+
+
+
+
+
+
+
 
 
 
