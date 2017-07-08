@@ -43,10 +43,10 @@ _Comment, concerns or suggestions welcome! lewis.start0905@gmail.com_
 
 ## Technologies Used
 
-_HTML/CSS, Bootstrap, Ruby/Rails, ActiveRecord, Paperclip, Devise_
+_HTML/CSS, Bootstrap, Ruby/Rails, ActiveRecord, Paperclip, Devise, rails_admin, cancancan_
 
 ### License
 
 *MIT*
 
-Copyright (c) 2017 **_S.Start and E.Baharie_**
+Copyright (c) 2017 **_Starlynne Start_**
