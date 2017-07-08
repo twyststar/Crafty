@@ -8,20 +8,25 @@
 }
 
 #splash {
-  margin-left: -20px;
+  padding-top: 5%;
+  margin-left: -16px;
   min-height: 1000px;
   width: 1200px;
   background-image: url(back.jpg);
 
 }
 .sign-box {
+  color: white;
+  background-image: url(triangle.jpeg);
   text-align: center;
-  margin-left: 35%;
-  margin-top: 5%;
+  margin-left: 32%;
   padding: 2%;
   border: 4px solid white;
   background-color: #efedea;
-  width: 30%;
+  width: 40%;
+  a {
+    color:#54dddd;
+  }
 }
 
 .page-box {
@@ -52,7 +57,8 @@
 
 .user-box {
   text-align: center;
-  border: 2px solid white;
+  border: 2px ridge white;
+
   padding: 2%;
   width: 50%;
   img {
@@ -63,13 +69,53 @@
   }
 }
 .admins {
-  padding-top: 4%;
+  background-image: url(zigs3.jpg);
   text-align: center;
-  .user-box{
+  color: white;
+  padding: 3%;
+  border: 1px solid white;
+  .inner {
     padding: 2%;
-    float: left;
-    width: 30%;
-    border: 1px solid lightgray;
+    .user-box{
+      padding: 2%;
+      float: left;
+      width: 30%;
+      border: 1px solid lightgray;
+      margin-top: 1%;
+      background-color: #efedea;
+    }
   }
 
+
+}
+.members {
+  background-image: url(zigs1.jpg);
+  text-align: center;
+  color: white;
+  padding: 2%;
+  border: 1px solid white;
+  .inner {
+    padding: 2%;
+    .user-box{
+      margin: auto;
+      margin-top: 3%;
+      background-color: #efedea;
+    }
+  }
+}
+
+.sellers {
+  background-image: url(zigs2.jpg);
+  text-align: center;
+  color: white;
+  padding: 2%;
+  border: 1px solid white;
+  .inner {
+    padding: 2%;
+    .user-box{
+      margin: auto;
+      margin-top: 3%;
+      background-color: #efedea;
+    }
+  }
 }
