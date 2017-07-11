@@ -13,4 +13,9 @@ class AddBioToUsers < ActiveRecord::Migration[5.1]
       u.seller_role = true
       u.username = "Test Seller"
   end
+  User.create! do |u|
+      u.email     = 'test@test.com'
+      u.password    = 'password'
+      u.admin_role = true
+  end
 end
